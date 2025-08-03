@@ -14,7 +14,7 @@
       };
 
       try {
-        const response = await fetch('YOUR_SCRIPT_URL', {
+        const response = await fetch('https://script.google.com/macros/s/AKfycbz3sK_gNkUH0xHSk9qF-MCI1ecLQCWt6CFbJ7sQKAzIrO7n_iVP9-rSql9KIrh9FJaU2g/exec', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
