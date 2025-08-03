@@ -27,17 +27,38 @@
 
   <div class="form-container">
     <form name="submit-to-google-sheet">
-      <input name="email" type="email" placeholder="Email" required>
-      <input name="firstName" type="text" placeholder="First Name">
-      <input name="lastName" type="text" placeholder="Last Name">
+              <div class="mb-3">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName" firsrequired>
+              </div>
 
-      <div class="mb-3">
+              <div class="mb-3">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="idNumber" class="form-label">ID Number</label>
+                <input type="text" class="form-control" id="idNumber" required>
+              </div>
+
+              <div class="mb-3">
                 <div class="mb-3">
                   <label for="jobTitle" class="form-label">Job Title</label>
                   <input id="jobTitle" name="jobTitle" placeholder="e.g. RN, CN, or type your own..." autocomplete="off">
                 </div>
               </div>
-      <button type="submit">Submit</button>
+              <button type="submit" class="btn btn-primary w-100">Submit</button>
     </form>
 
     <div class="loading js-loading is-hidden">
