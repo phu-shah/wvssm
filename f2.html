@@ -72,13 +72,8 @@
 
               <div class="mb-3">
                 <label for="jobTitle" class="form-label">Job Title</label>
-                <select id="jobTitle" name="jobTitle" placeholder="Select or type a job title..." autocomplete="off">
-                  <option value="">Select a job title...</option>
-                  <option>Enrolled Nurse</option>
-                  <option>Registered Nurse</option>
-                  <option>Senior Registered Nurse</option>
-                  <option>Clinical Nurse</option>
-                </select>
+                <select id="jobTitle" name="jobTitle" placeholder="Select or type a job title..." autocomplete="off"></select>
+
               </div>
 
               <button type="submit" class="btn btn-primary w-100">Submit</button>
@@ -109,13 +104,29 @@
 
   <!-- Activate Tom Select on Job Title -->
   <script>
+    fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec')
+  .then(res => res.json())
+  .then(jobTitles => {
+    // Convert titles to Tom Select options format
+    const options = jobTitles.map(title => ({ value: title, text: title }));
+    
     new TomSelect('#jobTitle', {
+      options: options,
       create: true,
       sortField: {
         field: "text",
         direction: "asc"
       }
     });
+  })
+  .catch(err => {
+    console.error('Failed to load job titles:', err);
+    // Optional fallback: Initialize Tom Select without options or show error
+    new TomSelect('#jobTitle', {
+      create: true
+    });
+  });
+
   </script>
 
   <!-- Form submission logic -->
